@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cek Pendaftaran</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    .result p {
+      margin: 5px 0;
+    }
+    .card {
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    .card-title {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    button.btn-custom {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-top: 15px;
+      background-color: green;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    button.btn-custom img {
+      width: 20px;
+      margin-right: 5px;
+    }
+    
+    .img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .textt {
+      color: #e09200;
+    }
+    .table thead {
+      background-color: #727374;
+      color: white;
+    }
+    .table tbody tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+    .search-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .btn {
+    display: inline-block;
+    margin: 0 10px; /* Margin horizontal */
+  }
+
+  .btn-secondary {
+    background-color: #6c757d; /* Contoh warna untuk btn-secondary */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .btn-custom {
+    background-color: #25D366; /* Contoh warna untuk btn-custom */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-custom img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .btn {
+      margin: 10px 0; /* Margin vertikal pada layar kecil */
+    }
+
+    .btn-secondary, .btn-custom {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+  table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        td {
+            background-color: #ffffff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        .navbar-custom {
+    background: linear-gradient(to right, #00D05E, #009BFE);
+  }
+  .navbar-site {
+    background-color: #333;
+  }
+  .offcanvas-title{
+    color: #f1f1f1;
+  }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-custom fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">PPDB SMK </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end navbar-site" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu PPDB</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="http://www.smkmutupringsewu.sch.id/">Website SMK</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="https://www.instagram.com/sewu_smkmutupringsewu?igsh=MXdpZ2lzZmpodTJhdg==">Instagram</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="https://www.facebook.com/SMKM.SEWU/">Facebook</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Jika ingin cek pendaftaran silahkan klik tombol dibawah ini</a>
+                  <button type="button" class="btn btn-primary" onclick="window.location.href='cek.html';">Cek Pendaftaran</button>
+     
+                </li>
+               
+              </ul>
+            
+            </div>
+          </div>
+        </div>
+      </nav>
+     <br>
+     
+  <div class="container mt-5">
+    <h1>Cek Pendaftaran</h1>
+    <form id="searchForm">
+      <div class="form-group">
+        <label for="nomorPendaftaran">Nomor Pendaftaran:</label>
+        <input type="text" id="nomorPendaftaran" name="nomor_pendaftaran" required>
+      </div>
+      <button type="submit">Cek Sekarang</button>
+    </form>
+
+    
+  </div>
+  <div class="result" id="result"></div>
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var nomorPendaftaran = document.getElementById('nomorPendaftaran').value;
+    
+      fetch('https://script.google.com/macros/s/AKfycbyBHb_zU1KjPLKaJOKlEwYa7QK_IR4hDJpy0NT0z8QZ6vEqFcSSsBzAlklX0jSSKSkwuA/exec', {
+        method: 'POST',
+        body: new URLSearchParams({
+          action: 'search',
+          nomor_pendaftaran: nomorPendaftaran
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        var resultDiv = document.getElementById('result');
+        if (data.status === 'success') {
+          resultDiv.innerHTML = `
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><strong>DATA DIRI CALON SISWA</strong> <br><p>SMK MUHAMMADIYAH 1 PRINGSEWU TP.2025/2026</p></h5>
+                <p>Silahkan Cetak Kartu anda dan bergabung dengan grup WhatsApp agar mendapatkan info lebih lanjut</p>
+                <table class="table">
+                  <tr><td>Nama Lengkap</td><td>${data.data.Nama_Lengkap}</td></tr>
+                  <tr><td>Tempat dan Tanggal Lahir</td><td>${data.data.Tempat_Lahir}, ${data.data.Tanggal_Lahir}</td></tr>
+                  <tr><td>Alamat SMP</td><td>${data.data.Alamat_SMP}</td></tr>
+                  <tr><td>Alamat Tinggal</td><td>${data.data.Alamat_Tinggal}</td></tr>
+                  <tr><td>Asal SMP/MTs</td><td>${data.data.Asal_SMP}</td></tr>
+                  <tr><td>Nama Ibu</td><td>${data.data.Nama_Ibu}</td></tr>
+                  <tr><td>Alamat Orang Tua</td><td>${data.data.Alamat_Orang_Tua}</td></tr>
+                  <tr><td>Nomor HP Orang Tua</td><td>${data.data.Nomor_HP_Orang_Tua}</td></tr>
+                  <tr><td>Jurusan</td><td>${data.data.Jurusan}</td></tr>
+                </table>
+                <button id="generatePdf" class="btn btn-secondary mt-3 mb-2">Cetak Kartu Pendaftaran</button>
+                <a href="https://chat.whatsapp.com/GYkK5iQMNR2GiSTnCOytOd" class="btn btn-custom" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+                  Bergabung Dengan Grup WA Casis
+                </a>
+              </div>
+            </div>
+          `;
+    
+          // PDF Generation Logic
+          document.getElementById('generatePdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+    
+            // Add the title to the PDF
+            const title1 = 'KARTU PENDAFTARAN PPDB';
+            const title2 = 'TAHUN 2025/2026';
+            pdf.setFontSize(16);
+            pdf.setFont('helvetica', 'bold');
+            pdf.text(title1, 105, 20, { align: 'center' });
+            pdf.text(title2, 105, 30, { align: 'center' });
+    
+            // Add a registration statement
+            pdf.setFontSize(12);
+            pdf.setFont('helvetica', 'normal');
+            pdf.text('Dengan ini kami menyatakan bahwa:', 10, 50);
+    
+            // Retrieve form data and add it to the table
+            const tableData = [
+              { label: 'Nomor Pendaftaran', value: nomorPendaftaran },
+              { label: 'Nama Lengkap', value: data.data.Nama_Lengkap },
+              { label: 'Tempat dan Tanggal Lahir', value: `${data.data.Tempat_Lahir}, ${data.data.Tanggal_Lahir}` },
+              { label: 'Nama Ibu', value: data.data.Nama_Ibu },
+              { label: 'No HP Orang Tua', value: data.data.Nomor_HP_Orang_Tua },
+              { label: 'Asal SMP/MTs', value: data.data.Asal_SMP },
+              { label: 'Alamat Tinggal', value: data.data.Alamat_Tinggal },
+              { label: 'Jurusan', value: data.data.Jurusan }
+            ];
+    
+            pdf.autoTable({
+              head: [['Label', 'Informasi']],
+              body: tableData.map(item => [item.label, item.value]),
+              startY: 60
+            });
+    
+            // Add additional text after table
+            const textMargin = 10; // Margin from left
+            const textWidth = pdf.internal.pageSize.getWidth() - 2 * textMargin; // Width available for text
+    
+            const texts = [
+              'Telah berhasil mendaftar sebagai calon siswa di SMK Muhammadiyah 1 Pringsewu untuk tahun ajaran 2025/2026.',
+              'Untuk tanda jadi pembayaran bisa langsung ke SMK Muhammadiyah 1 Pringsewu menemui bendahara ibu army Anggraini atau via transfer melalui rekening BRI 5777-01-065808-530 atas nama SMK Muhammadiyah Pringsewu dan konfirmasi transfer ke nomor WA 0823-7622-4096 atas nama ibu army Anggraini.',
+              'Untuk informasi lebih lanjut dapat menghubungi kontak kami melalui sosial media ataupun melalui nomor WA berikut atas nama panitia (0852-8554-4100).'
+            ];
+    
+            let yOffset = pdf.autoTable.previous.finalY + 10; // Starting Y position after table
+            const lineHeight = 8; // Adjust line height as needed
+    
+            texts.forEach(text => {
+              const textLines = pdf.splitTextToSize(text, textWidth); // Split text into lines to fit width
+              textLines.forEach(line => {
+                pdf.text(line, textMargin, yOffset); // Left-align text using textMargin
+                yOffset += lineHeight; // Adjust line height
+              });
+              yOffset += 10; // Additional space between paragraphs
+            });
+    
+            // Generate QR code
+            QRCode.toDataURL('Angga Dwianto S.Pd', { width: 80, height: 80 }, (err, qrCodeDataUrl) => {
+              if (err) throw err;
+    
+              // Add QR code image to PDF
+              pdf.addImage(qrCodeDataUrl, 'PNG', textMargin, yOffset + 10, 30, 30); // Adjust size and position as needed
+    
+              // Add text below QR code
+              pdf.text('TTD Ketua PPDB', textMargin + 35, yOffset + 18); // Adjust position as needed
+              pdf.text('SMK Muhammadiyah 1 Pringsewu', textMargin + 35, yOffset + 28); // Adjust position as needed
+              pdf.text('Angga Dwianto, S.Pd', textMargin + 35, yOffset + 35); // Adjust position as needed
+    
+              // Save the PDF
+              pdf.save('Kartu-Pendaftaran-PPDB.pdf');
+            });
+          });
+    
+        } else {
+          var resultDiv = document.getElementById('result');
+          resultDiv.innerHTML = '<p>Data tidak ditemukan. Pastikan nomor pendaftaran benar.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        var resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = '<p>Terjadi kesalahan saat mengambil data. Silakan coba lagi.</p>';
+      });
+    });
+    </script>
+    
+
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.6.0/dist/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.26/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.6.0/dist/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+</body>
+</html>
